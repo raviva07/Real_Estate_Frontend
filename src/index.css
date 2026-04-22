@@ -1,0 +1,78 @@
+/* 🔐 Login/Register card */
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* 🔍 Search box */
+.search-box {
+  max-width: 900px;
+  margin: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* 🧾 Inputs */
+input, select, textarea {
+  padding: 10px;
+  font-size: 14px;
+}
+
+/* ✨ Better spacing */
+.card {
+  border-radius: 12px;
+}
+
+body {
+  background: linear-gradient(to right, #eef2f3, #ffffff);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* 🏠 Cards */
+.property-card {
+  border-radius: 15px;
+  overflow: hidden;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.property-card:hover {
+  transform: translateY(-8px);
+}
+
+/* 🖼 Image */
+.property-card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* 💰 Price */
+.price-tag {
+  color: #28a745;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* 🔥 Admin cards */
+.admin-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* 🔘 Buttons */
+.btn {
+  border-radius: 10px !important;
+}
+
+/* 📦 Form */
+input, select, textarea {
+  border-radius: 10px !important;
+}
+
+/* 🧭 Navbar */
+.navbar {
+  backdrop-filter: blur(10px);
+}
