@@ -1,19 +1,41 @@
 import axios from "axios";
-
-// ✅ BASE URL (CHANGE if needed)
 const API = axios.create({
-  baseURL: "http://localhost:8080/api"
+  baseURL: import.meta.env.VITE_API_BASE_URL
 });
 
-// ✅ ADD TOKEN TO EVERY REQUEST
-API.interceptors.request.use((req) => {
-  const token = localStorage.getItem("token");
 
-  if (token) {
-    req.headers.Authorization = `Bearer ${token}`;
+const API = axios.create({
+  baseURL: import.meta.env.VITE_API_BASE_URL || "https://realestate-backend-vf8j.onrender.com/api",
+});
+
+
+API.interceptors.request.use(
+  (req) => {
+    const token = localStorage.getItem("token");
+
+    if (token) {
+      req.headers.Authorization = `Bearer ${token}`;
+    }
+
+    return req;
+  },
+  (error) => Promise.reject(error)
+);
+
+
+API.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    console.error("API Error:", error?.response || error.message);
+
+  
+    if (error?.response?.status === 403) {
+      localStorage.removeItem("token");
+    }
+
+    return Promise.reject(error);
   }
-
-  return req;
-});
+);
 
 export default API;
+
